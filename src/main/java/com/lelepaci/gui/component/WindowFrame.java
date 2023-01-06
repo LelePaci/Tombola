@@ -15,5 +15,20 @@ public class WindowFrame extends JFrame implements WindowInfos {
         this.setLocationRelativeTo(null); // Starts at the center of the screen
         this.setUndecorated(true);
         this.setBackground(new Color(0,0,0,0));
+
+//        this.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(ICON.getImage(),
+//                new Point(0,0),"custom cursor"));
+
+        // After this must call the method `updateFrame()` cause of Java Swing :/. I don't want to explain, read docs!
+        this.setVisible(true);
+    }
+    public void updateFrame(){
+        this.revalidate();
+        this.repaint();
+    }
+
+    public void close(){
+        this.dispose();
+        System.exit(0);
     }
 }

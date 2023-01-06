@@ -10,41 +10,46 @@ import java.util.List;
 public class WindowsManager {
 
     private WindowFrame windowFrame;
-    private WindowPanel borderPanel;
-    private List<Window> windowsList;
-    public WindowsManager(WindowFrame windowFrame, WindowPanel borderPanel) {
+    private WindowPanel windowPanel;
+    private List<Window> windowList;
+
+    public WindowsManager(WindowFrame windowFrame, WindowPanel windowPanel) {
         this.windowFrame = windowFrame;
-        this.borderPanel = borderPanel;
-        windowsList = new ArrayList<>();
+        this.windowPanel = windowPanel;
+        windowList = new ArrayList<>();
     }
 
-    public void preloadWindow(Window window){
-        windowsList.add(window);
+    public void preloadWindow(Window window) {
+        windowList.add(window);
+        window.setWindowsManager(this);
+    }
+
+    public Window getWindow(String name) {
+        for (Window w : windowList) {
+            if (w.getWindowName().equals(name)) {
+                return w;
+            }
+        }
+        return null;
     }
 
     /**
-     * @param windowName Must be the exact name of the windows
+     * @param window The window to add
      */
-    public void loadWindow(String windowName){
-        for (Window w: windowsList) {
-            if (w.getWindowName().equals(windowName)) {
-                borderPanel.add(w);
-                windowFrame.revalidate();
-                windowFrame.repaint();
-            }
-        }
+    public void loadWindow(Window window) {
+        windowPanel.add(window);
+        windowFrame.updateFrame();
     }
 
     /**
-     * @param windowName Must be the exact name of the windows
+     * @param window The window to remove
      */
-    public void unloadWindow(String windowName){
-        for (Window w: windowsList) {
-            if (w.getWindowName().equals(windowName)) {
-                borderPanel.remove(w);
-                windowFrame.revalidate();
-                windowFrame.repaint();
-            }
-        }
+    public void unloadWindow(Window window) {
+        windowPanel.add(window);
+        windowFrame.updateFrame();
+    }
+
+    public void closeApp(){
+        windowFrame.close();
     }
 }
