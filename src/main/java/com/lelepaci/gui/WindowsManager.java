@@ -2,7 +2,7 @@ package com.lelepaci.gui;
 
 import com.lelepaci.gui.component.WindowFrame;
 import com.lelepaci.gui.component.WindowPanel;
-import com.lelepaci.gui.component.Window;
+import com.lelepaci.gui.component.base.TPanel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ public class WindowsManager {
 
     private WindowFrame windowFrame;
     private WindowPanel windowPanel;
-    private List<Window> windowList;
+    private List<TPanel> windowList;
 
     public WindowsManager(WindowFrame windowFrame, WindowPanel windowPanel) {
         this.windowFrame = windowFrame;
@@ -19,13 +19,12 @@ public class WindowsManager {
         windowList = new ArrayList<>();
     }
 
-    public void preloadWindow(Window window) {
+    public void preloadWindow(TPanel window) {
         windowList.add(window);
-        window.setWindowsManager(this);
     }
 
-    public Window getWindow(String name) {
-        for (Window w : windowList) {
+    public TPanel getWindow(String name) {
+        for (TPanel w : windowList) {
             if (w.getWindowName().equals(name)) {
                 return w;
             }
@@ -36,7 +35,7 @@ public class WindowsManager {
     /**
      * @param window The window to add
      */
-    public void loadWindow(Window window) {
+    public void loadWindow(TPanel window) {
         windowPanel.add(window);
         windowFrame.updateFrame();
     }
@@ -44,12 +43,8 @@ public class WindowsManager {
     /**
      * @param window The window to remove
      */
-    public void unloadWindow(Window window) {
-        windowPanel.add(window);
+    public void unloadWindow(TPanel window) {
+        windowPanel.remove(window);
         windowFrame.updateFrame();
-    }
-
-    public void closeApp(){
-        windowFrame.close();
     }
 }

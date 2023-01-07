@@ -1,17 +1,13 @@
 package com.lelepaci.gui.windows;
 
-import com.lelepaci.gui.WindowInfos;
-import com.lelepaci.gui.component.Window;
-import com.lelepaci.gui.utils.BufferedImageLoader;
-import com.lelepaci.gui.utils.FontLoader;
+import com.lelepaci.gui.component.base.TPanel;
+import com.lelepaci.gui.component.WindowFrame;
 
-import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 
-public class StartWindow extends Window {
-    public StartWindow(String windowName) {
-        super(windowName);
+public class StartWindow extends TPanel {
+    public StartWindow(WindowFrame windowFrame, String windowName) {
+        super(windowFrame, windowName);
         this.setOpaque(false);
         this.setPreferredSize(new Dimension((int)WINDOW_WIDTH, (int) WINDOW_HEIGHT));
 

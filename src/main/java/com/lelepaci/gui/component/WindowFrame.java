@@ -16,7 +16,7 @@ public class WindowFrame extends JFrame implements WindowInfos {
         this.setUndecorated(true);
         this.setBackground(new Color(0,0,0,0));
 
-//        this.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(ICON.getImage(),
+//        this.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(CLOSING_APP.getImage(),
 //                new Point(0,0),"custom cursor"));
 
         // After this must call the method `updateFrame()` cause of Java Swing :/. I don't want to explain, read docs!
