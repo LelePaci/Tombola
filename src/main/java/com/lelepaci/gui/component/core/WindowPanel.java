@@ -1,7 +1,8 @@
-package com.lelepaci.gui.component;
+package com.lelepaci.gui.component.core;
 
 import com.lelepaci.gui.component.base.TPanel;
-import com.lelepaci.gui.windows.StartWindow;
+import com.lelepaci.gui.view.UsernameView;
+import com.lelepaci.main.Tombola;
 
 import java.awt.*;
 
@@ -12,10 +13,11 @@ public class WindowPanel extends TPanel{
         this.setLayout(new BorderLayout());
 
         TopBar topBar = new TopBar(windowFrame);
-        StartWindow startWindow = new StartWindow(windowFrame);
+        UsernameView startWindow = new UsernameView(windowFrame);
 
         this.add(startWindow);
         this.add(topBar);
+        Tombola.startWindow = startWindow;
 
         windowFrame.add(this);
         windowFrame.updateFrame();

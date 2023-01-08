@@ -1,16 +1,16 @@
-package com.lelepaci.gui.windows;
+package com.lelepaci.gui.view;
 
 import com.lelepaci.gui.component.UsernameInputBox;
 import com.lelepaci.gui.component.base.TPanel;
-import com.lelepaci.gui.component.WindowFrame;
+import com.lelepaci.gui.component.core.WindowFrame;
 import com.lelepaci.gui.utils.FontLoader;
 import com.lelepaci.gui.utils.GridBagConstraintBuilder;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class StartWindow extends TPanel {
-    public StartWindow(WindowFrame windowFrame) {
+public class UsernameView extends TPanel {
+    public UsernameView(WindowFrame windowFrame) {
         super(windowFrame);
         this.setOpaque(false);
         this.setPreferredSize(new Dimension((int)WINDOW_WIDTH, (int) WINDOW_HEIGHT - 25));
@@ -31,8 +31,8 @@ public class StartWindow extends TPanel {
 
 
         //GRIDBAG CONSTRAINTS
-        GridBagConstraints gridLabelTitle = GridBagConstraintBuilder.buildGrigBagConstraint(0,0,0.0f,.0f, new Insets(0,0,185,0));
-        GridBagConstraints gridInputBox = GridBagConstraintBuilder.buildGrigBagConstraint(0,1,0.0f,.0f, new Insets(0,0,0,0));
+        GridBagConstraints gridLabelTitle = GridBagConstraintBuilder.build(0,0,0.0f,.0f, new Insets(0,0,185,0));
+        GridBagConstraints gridInputBox = GridBagConstraintBuilder.build(0,1,0.0f,.0f, new Insets(0,0,0,0));
 
         this.add(labelTitle, gridLabelTitle);
         this.add(nicknameInputBox, gridInputBox);
@@ -44,14 +44,6 @@ public class StartWindow extends TPanel {
     protected void paintComponent(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-//        g2d.setColor(Color.YELLOW);
-//        g2d.fillRoundRect(0, 0, getWidth(), getHeight(), 15, 15);
-        g2d.setColor(Color.YELLOW);
-//        g2d.fillRoundRect(0, 0, 600, 100, 15, 15);
-
-
-//        g2d.drawImage(BufferedImageLoader.loadImage(RESOURCE_FOLDER));
-
         System.out.println("painted StarWindow");
         super.paintComponent(g);
     }

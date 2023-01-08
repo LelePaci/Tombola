@@ -1,16 +1,15 @@
-package com.lelepaci.gui.component;
+package com.lelepaci.gui.component.button;
 
 import com.lelepaci.gui.component.base.TButton;
+import com.lelepaci.gui.component.core.WindowFrame;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 
 public class GoNextButton extends TButton {
     public GoNextButton(WindowFrame windowFrame) {
         super(windowFrame);
         this.setIcon(new ImageIcon(RIGHT_ARROW.getImage().getScaledInstance(40, 40, Image.SCALE_SMOOTH)));
-
     }
 
     @Override
@@ -20,10 +19,5 @@ public class GoNextButton extends TButton {
         g2d.setPaint(RADIAL_GRADIENT_PAINT);
         g2d.fillRoundRect(0, 0, getWidth(), getHeight(), 30,30);
         super.paintComponent(g);
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
     }
 }

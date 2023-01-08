@@ -1,14 +1,12 @@
 package com.lelepaci.gui.component.base;
 
 import com.lelepaci.gui.WindowInfos;
-import com.lelepaci.gui.component.WindowFrame;
+import com.lelepaci.gui.component.core.WindowFrame;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public abstract class TButton extends JButton implements WindowInfos, ActionListener {
+public abstract class TButton extends JButton implements WindowInfos {
     protected WindowFrame windowFrame;
 
     public TButton(WindowFrame windowFrame) {
@@ -18,5 +16,7 @@ public abstract class TButton extends JButton implements WindowInfos, ActionList
         this.setContentAreaFilled(false);
         this.setBorder(null);
         this.setLayout(null);
+        this.setFocusPainted(false);
+        this.setBorderPainted(false);
     }
 }

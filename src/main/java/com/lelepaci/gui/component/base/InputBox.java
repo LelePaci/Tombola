@@ -1,7 +1,6 @@
 package com.lelepaci.gui.component.base;
 
-import com.lelepaci.gui.component.WindowFrame;
-import com.lelepaci.gui.component.base.TPanel;
+import com.lelepaci.gui.component.core.WindowFrame;
 
 import java.awt.*;
 

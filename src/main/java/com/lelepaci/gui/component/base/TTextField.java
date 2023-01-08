@@ -15,7 +15,7 @@ public class TTextField extends JTextField implements WindowInfos {
         setFont(FontLoader.loadFont(UNIVERSES_FONT_PATH, size));
         setBackground(new Color(0,0,0,0));
         setForeground(Color.GRAY);
-        setBorder(BorderFactory.createEmptyBorder(5,15,0,15));
+        setBorder(BorderFactory.createEmptyBorder(5,15,5,15));
     }
 
     public void hidePlaceholder() {
@@ -32,22 +32,27 @@ public class TTextField extends JTextField implements WindowInfos {
         }
     }
 
+    public String getPlaceholder(){
+        return placeholder;
+    }
+
+
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setColor(Color.decode("#d9d9d9"));
-        g2d.fillRoundRect(0, 0, getWidth() - 1, getHeight() - 1, 30, 30);
+        g2d.fillRoundRect(0, 0, getWidth(), getHeight(), 30, 30);
         super.paintComponent(g);
     }
 
     @Override
     protected void paintBorder(Graphics g) {
-        Graphics2D g2d = (Graphics2D) g;
-        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        g2d.setColor(Color.decode("#d9d9d9"));
-        g2d.drawRoundRect(0, 0, getWidth() - 1, getHeight() - 1, 30, 30);
-        super.paintBorder(g);
+//        Graphics2D g2d = (Graphics2D) g;
+//        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+//        g2d.setColor(Color.decode("#d9d9d9"));
+//        g2d.drawRoundRect(0, 0, getWidth() - 1, getHeight() - 1, 30, 30);
+//        super.paintBorder(g);
     }
 }

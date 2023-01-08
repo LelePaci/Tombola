@@ -1,4 +1,4 @@
-package com.lelepaci.gui.component;
+package com.lelepaci.gui.component.core;
 
 import com.lelepaci.gui.WindowInfos;
 
