@@ -14,8 +14,8 @@ import java.net.URISyntaxException;
 public class TopBar extends TPanel {
 
     private int x, y;
-    public TopBar(WindowFrame windowFrame, String windowName) {
-        super(windowFrame, windowName);
+    public TopBar(WindowFrame windowFrame) {
+        super(windowFrame);
         this.setOpaque(false);
         this.setPreferredSize(new Dimension((int) WINDOW_WIDTH, 25));
         this.setLayout(new GridBagLayout());
@@ -78,7 +78,9 @@ public class TopBar extends TPanel {
     protected void paintComponent(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        g2d.setColor(Color.decode("#121212"));
+        //#121212
+        //#4F1613
+        g2d.setColor(Color.decode("#260B09"));
         g2d.fillRoundRect(0, 0, (int) WINDOW_WIDTH, 25, 10, 10);
         g2d.fillRect(0, 22, (int) WINDOW_WIDTH, 3);
         super.paintComponent(g);
