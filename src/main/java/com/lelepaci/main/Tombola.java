@@ -10,23 +10,13 @@ public class Tombola {
         new Tombola();
     }
 
-    private WindowsManager manager;
+//    private WindowsManager manager;
     private WindowFrame frame;
 
     public Tombola(){
         frame = new WindowFrame();
         // Need this for handling N JComponenet. Maybe shoul be Singleton
         WindowPanel windowPanel = new WindowPanel(frame);
-
         frame.add(windowPanel);
-//        manager = new WindowsManager(frame, windowPanel);
-//        initWindows();
-
-//        manager.loadWindow(manager.getWindow("topBar"));
     }
-
-//    public void initWindows(){
-//        manager.preloadWindow(new TopBar(frame, "topBar"));
-//         manager.preloadWindow(new StartWindow(frame,"startWindow"));
-//    }
 }

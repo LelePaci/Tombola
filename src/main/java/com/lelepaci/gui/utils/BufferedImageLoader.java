@@ -6,9 +6,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 public class BufferedImageLoader {
-    private BufferedImage image;
 
-    public BufferedImage loadImage(String path){
+    public static BufferedImage loadImage(String path){
+        BufferedImage image;
         try {
             image =ImageIO.read(new FileInputStream(path));
         } catch (IOException e) {

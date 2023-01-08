@@ -1,21 +1,21 @@
 package com.lelepaci.gui.component;
 
-import com.lelepaci.gui.WindowInfos;
 import com.lelepaci.gui.component.base.TPanel;
+import com.lelepaci.gui.windows.StartWindow;
 
-import javax.swing.*;
 import java.awt.*;
 
-public class WindowPanel extends TPanel implements WindowInfos {
+public class WindowPanel extends TPanel{
     public WindowPanel(WindowFrame windowFrame) {
         super(windowFrame);
         this.setOpaque(false);
         this.setLayout(new BorderLayout());
 
-        TopBar topBar = new TopBar(windowFrame,"topBar");
+        TopBar topBar = new TopBar(windowFrame);
+        StartWindow startWindow = new StartWindow(windowFrame);
 
+        this.add(startWindow);
         this.add(topBar);
-
 
         windowFrame.add(this);
         windowFrame.updateFrame();
