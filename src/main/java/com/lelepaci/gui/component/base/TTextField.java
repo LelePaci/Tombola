@@ -1,16 +1,29 @@
 package com.lelepaci.gui.component.base;
 
-import com.lelepaci.gui.WindowInfos;
+import com.lelepaci.gui.component.core.WindowFrame;
+import com.lelepaci.gui.utils.WindowInfos;
 import com.lelepaci.gui.utils.FontLoader;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class TTextField extends JTextField implements WindowInfos {
+
+    private WindowFrame windowFrame;
     private String placeholder;
 
     public TTextField(String placeholder, int size) {
         super(placeholder);
+        this.placeholder = placeholder;
+        setFont(FontLoader.loadFont(UNIVERSES_FONT_PATH, size));
+        setBackground(new Color(0,0,0,0));
+        setForeground(Color.GRAY);
+        setBorder(BorderFactory.createEmptyBorder(5,15,5,15));
+    }
+
+    public TTextField(WindowFrame windowFrame, String placeholder, int size) {
+        super(placeholder);
+        this.windowFrame = windowFrame;
         this.placeholder = placeholder;
         setFont(FontLoader.loadFont(UNIVERSES_FONT_PATH, size));
         setBackground(new Color(0,0,0,0));
@@ -36,7 +49,6 @@ public class TTextField extends JTextField implements WindowInfos {
         return placeholder;
     }
 
-
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -54,5 +66,13 @@ public class TTextField extends JTextField implements WindowInfos {
 //        g2d.setColor(Color.decode("#d9d9d9"));
 //        g2d.drawRoundRect(0, 0, getWidth() - 1, getHeight() - 1, 30, 30);
 //        super.paintBorder(g);
+    }
+
+    @Override
+    public void setVisible(boolean aFlag) {
+        super.setVisible(aFlag);
+        if (windowFrame != null){
+            windowFrame.updateFrame();
+        }
     }
 }

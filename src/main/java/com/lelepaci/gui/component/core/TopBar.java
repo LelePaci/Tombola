@@ -1,5 +1,6 @@
 package com.lelepaci.gui.component.core;
 
+import com.lelepaci.gui.component.TransparentPanel;
 import com.lelepaci.gui.component.base.TPanel;
 import com.lelepaci.gui.component.button.CloseAppButton;
 import com.lelepaci.gui.utils.FontLoader;
@@ -29,7 +30,7 @@ public class TopBar extends TPanel {
 
         CloseAppButton btn = new CloseAppButton(windowFrame);
 
-        JPanel draggable = new EmptyPanel();
+        JPanel draggable = new TransparentPanel();
 
         int draggableWidth = this.getPreferredSize().width - (int)(btn.getPreferredSize().width) - (int)(labelTitle.getPreferredSize().width);
         draggable.setPreferredSize(new Dimension(draggableWidth, this.getPreferredSize().height));
@@ -72,7 +73,7 @@ public class TopBar extends TPanel {
         this.add(labelTitle, gridLabelTitle);
         this.add(draggable,gridDraggable);
         this.add(btn,gridCloseAppButton);
-        this.add(new EmptyPanel(), gridEmptySpace);
+        this.add(new TransparentPanel(), gridEmptySpace);
     }
 
     @Override

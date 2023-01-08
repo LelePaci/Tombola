@@ -4,12 +4,11 @@ import com.lelepaci.gui.component.core.WindowFrame;
 
 import java.awt.*;
 
-public class InputBox extends TPanel {
+public class EmptyBox extends TPanel {
 
-    public InputBox(WindowFrame windowFrame) {
+    public EmptyBox(WindowFrame windowFrame) {
         super(windowFrame);
         this.setOpaque(false);
-        System.out.println(getPreferredSize());
     }
 
     @Override

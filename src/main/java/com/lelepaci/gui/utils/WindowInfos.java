@@ -1,4 +1,4 @@
-package com.lelepaci.gui;
+package com.lelepaci.gui.utils;
 
 import com.lelepaci.gui.utils.BufferedImageLoader;
 
@@ -10,6 +10,7 @@ public interface WindowInfos {
     String RESOURCE_FOLDER = "src/main/resources/";
     String FONT_FOLDER = RESOURCE_FOLDER + "font/";
     String ICONS_FOLDER = RESOURCE_FOLDER + "icons/";
+    String CURSORS_FOLDER = RESOURCE_FOLDER + "cursors/";
 
     //PATH
     String BEBAS_NEUE_FONT_PATH = FONT_FOLDER + "BebasNeue-Regular.ttf";
@@ -20,7 +21,7 @@ public interface WindowInfos {
     ImageIcon CLOSING_APP = new ImageIcon(ICONS_FOLDER + "app-closing.png");
     ImageIcon RIGHT_ARROW = new ImageIcon(ICONS_FOLDER + "right-arrow.png");
 
-//    ImageIcon CURSOR = new ImageIcon(RESOURCE_FOLDER + "cursor.gif");
+    ImageIcon CURSOR = new ImageIcon(CURSORS_FOLDER + "test.png");
 //    Image CURSOR = BufferedImageLoader.loadImage(RESOURCE_FOLDER + "cursor.gif");
 
     //WINDOW SIZE
