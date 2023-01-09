@@ -25,13 +25,11 @@ public class UsernameView extends TPanel {
         labelTitle.setVisible(true);
 
         UsernameInputBox usernameInputBox = new UsernameInputBox(windowFrame);
-        usernameInputBox.setPreferredSize(new Dimension(600, 75));
+
 
         //GRIDBAG CONSTRAINTS
-        GridBagConstraints gridLabelTitle = GridBagConstraintBuilder.build(0,0,0.0f,.0f, new Insets(0,0,185,0));
+        GridBagConstraints gridLabelTitle = GridBagConstraintBuilder.build(0,0,0.0f,.0f, new Insets(0,0,85,0));
         GridBagConstraints gridInputBox = GridBagConstraintBuilder.build(0,1,0.0f,.0f, new Insets(0,0,0,0));
-        GridBagConstraints gridCreateLobbyButton = GridBagConstraintBuilder.build(0,1,0.0f,.0f, new Insets(0,0,0,0));
-        GridBagConstraints gridJoinLobbyButton = GridBagConstraintBuilder.build(0,1,0.0f,.0f, new Insets(0,0,0,0));
 
         this.add(labelTitle, gridLabelTitle);
         this.add(usernameInputBox, gridInputBox);

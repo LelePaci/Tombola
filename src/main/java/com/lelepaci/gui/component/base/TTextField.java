@@ -6,6 +6,8 @@ import com.lelepaci.gui.utils.FontLoader;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 
 public class TTextField extends JTextField implements WindowInfos {
 
@@ -19,6 +21,7 @@ public class TTextField extends JTextField implements WindowInfos {
         setBackground(new Color(0,0,0,0));
         setForeground(Color.GRAY);
         setBorder(BorderFactory.createEmptyBorder(5,15,5,15));
+        handleFocus();
     }
 
     public TTextField(WindowFrame windowFrame, String placeholder, int size) {
@@ -29,6 +32,7 @@ public class TTextField extends JTextField implements WindowInfos {
         setBackground(new Color(0,0,0,0));
         setForeground(Color.GRAY);
         setBorder(BorderFactory.createEmptyBorder(5,15,5,15));
+        handleFocus();
     }
 
     public void hidePlaceholder() {
@@ -74,5 +78,19 @@ public class TTextField extends JTextField implements WindowInfos {
         if (windowFrame != null){
             windowFrame.updateFrame();
         }
+    }
+
+    private void handleFocus(){
+        this.addFocusListener(new FocusListener() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                hidePlaceholder();
+            }
+
+            @Override
+            public void focusLost(FocusEvent e) {
+                showPlaceholder();
+            }
+        });
     }
 }

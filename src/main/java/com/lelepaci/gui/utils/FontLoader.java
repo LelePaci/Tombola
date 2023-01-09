@@ -16,4 +16,5 @@ public class FontLoader {
         }
         return font.deriveFont(size);
     }
+
 }
