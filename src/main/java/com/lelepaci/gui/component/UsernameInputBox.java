@@ -2,8 +2,7 @@ package com.lelepaci.gui.component;
 
 import com.lelepaci.gui.component.base.EmptyBox;
 import com.lelepaci.gui.component.base.TTextField;
-import com.lelepaci.gui.component.button.CreateOrJoinLobbyButton;
-import com.lelepaci.gui.component.button.GoNextButton;
+import com.lelepaci.gui.component.button.RedButton;
 import com.lelepaci.gui.component.core.WindowFrame;
 import com.lelepaci.gui.utils.GridBagConstraintBuilder;
 import com.lelepaci.gui.utils.ViewManager;
@@ -23,7 +22,7 @@ public class UsernameInputBox extends EmptyBox {
     private int componentsHeight = 50;
 
     int boxWidth = usernameFieldWidth + 2 * internalBorder;
-    int boxHeight = internalBorder;
+    int boxHeight = 3*internalBorder;
 
     public UsernameInputBox(WindowFrame windowFrame) {
         super(windowFrame);
@@ -37,9 +36,9 @@ public class UsernameInputBox extends EmptyBox {
         boxHeight += componentsHeight;
 
         Dimension buttonsDim = new Dimension(200, componentsHeight);
-        CreateOrJoinLobbyButton createLobbyButton = new CreateOrJoinLobbyButton(windowFrame, "Crea Lobby", buttonsDim);
-        CreateOrJoinLobbyButton joinLobbyButton = new CreateOrJoinLobbyButton(windowFrame, "Partecipa", buttonsDim);
-        boxHeight += 2 * componentsHeight;
+        RedButton createLobbyButton = new RedButton(windowFrame, "Crea Lobby", buttonsDim);
+        RedButton joinLobbyButton = new RedButton(windowFrame, "Partecipa", buttonsDim);
+        boxHeight += componentsHeight;
 
         //LAYOUTS
         GridBagConstraints gridUsernameField = GridBagConstraintBuilder.build(0, 0, .0f, .0f, 2, 1, new Insets(0, 0, internalBorder, 0));
@@ -63,7 +62,7 @@ public class UsernameInputBox extends EmptyBox {
             }
         });
 
-        showIpAddressText();
+//        showIpAddressText();
         this.setPreferredSize(new Dimension(boxWidth, boxHeight));
 
         this.add(usernameField, gridUsernameField);
@@ -91,14 +90,13 @@ public class UsernameInputBox extends EmptyBox {
         ipAddressField.setPreferredSize(new Dimension(usernameFieldWidth, componentsHeight));
         ipAddressField.setMinimumSize(new Dimension(usernameFieldWidth, componentsHeight));
         ipAddressField.setHorizontalAlignment(JTextField.CENTER);
-        boxHeight += componentsHeight;
+        boxHeight += componentsHeight + internalBorder;
 
-        GridBagConstraints gridIpAddressField = GridBagConstraintBuilder.build(0, 2, .0f, .0f, new Insets(internalBorder, 0, 0, 0));
-        GridBagConstraints gridGoNextButton = GridBagConstraintBuilder.build(1, 2, .0f, .0f, new Insets(0, 0, 0, 0));
+        GridBagConstraints gridIpAddressField = GridBagConstraintBuilder.build(0, 2, .0f, .0f, 2,1, new Insets(internalBorder, 0, 0, 0));
+        GridBagConstraints gridGoNextButton = GridBagConstraintBuilder.build(0, 3, .0f, .0f, 2,1, new Insets(internalBorder, 0, 0, 0));
 
-        GoNextButton goNextButton = new GoNextButton(windowFrame);
-        goNextButton.setPreferredSize(new Dimension(200, componentsHeight));
-        boxHeight += componentsHeight;
+        RedButton goNextButton = new RedButton(windowFrame, "Continua", new Dimension(usernameFieldWidth, componentsHeight));
+        boxHeight += componentsHeight + internalBorder;
 
         this.setPreferredSize(new Dimension(boxWidth, boxHeight));
         this.add(ipAddressField, gridIpAddressField);

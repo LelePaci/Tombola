@@ -1,5 +1,6 @@
 package com.lelepaci.gui.view;
 
+import com.lelepaci.gui.component.TransparentPanel;
 import com.lelepaci.gui.component.UsernameInputBox;
 import com.lelepaci.gui.component.base.TPanel;
 import com.lelepaci.gui.component.core.WindowFrame;
@@ -10,13 +11,13 @@ import com.lelepaci.gui.utils.ViewManager;
 import javax.swing.*;
 import java.awt.*;
 
-public class UsernameView extends TPanel {
-    public UsernameView(WindowFrame windowFrame) {
+public class StartView extends TPanel {
+    public StartView(WindowFrame windowFrame) {
         super(windowFrame);
         this.setOpaque(false);
         this.setPreferredSize(new Dimension((int)WINDOW_WIDTH, (int) WINDOW_HEIGHT - 25));
         this.setBounds(0, 25, (int) WINDOW_WIDTH, (int) WINDOW_HEIGHT - 25);
-        this.setLayout(new GridBagLayout());
+        this.setLayout(new BorderLayout());
 
         //COMPONENTS
         JLabel labelTitle = new JLabel("Tombola");
@@ -26,15 +27,24 @@ public class UsernameView extends TPanel {
 
         UsernameInputBox usernameInputBox = new UsernameInputBox(windowFrame);
 
-
-        //GRIDBAG CONSTRAINTS
-        GridBagConstraints gridLabelTitle = GridBagConstraintBuilder.build(0,0,0.0f,.0f, new Insets(0,0,85,0));
+//        GridBagConstraints gridLabelTitle = GridBagConstraintBuilder.build(0,0,0.0f,.0f, new Insets(-150,0,0,0), GridBagConstraints.PAGE_START);
         GridBagConstraints gridInputBox = GridBagConstraintBuilder.build(0,1,0.0f,.0f, new Insets(0,0,0,0));
 
-        this.add(labelTitle, gridLabelTitle);
-        this.add(usernameInputBox, gridInputBox);
-        this.setVisible(true);
+        TransparentPanel topPanel = new TransparentPanel();
+        topPanel.setPreferredSize(new Dimension(this.getPreferredSize().width, (int) (WINDOW_HEIGHT * 0.4)));
+        topPanel.setLayout(new GridBagLayout());
+        topPanel.add(labelTitle);
 
+        this.add(topPanel, BorderLayout.PAGE_START);
+
+        TransparentPanel bottomPanel = new TransparentPanel();
+        bottomPanel.setPreferredSize(new Dimension(this.getPreferredSize().width, (int) (WINDOW_HEIGHT - topPanel.getPreferredSize().height)));
+        bottomPanel.setLayout(new GridBagLayout());
+        System.out.println(bottomPanel.getPreferredSize());
+        bottomPanel.add(usernameInputBox, gridInputBox);
+        this.add(bottomPanel, BorderLayout.PAGE_END);
+
+        this.setVisible(true);
         ViewManager.usernameView = this;
     }
 
