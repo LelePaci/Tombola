@@ -16,13 +16,12 @@ public interface WindowInfos {
     String BEBAS_NEUE_FONT_PATH = FONT_FOLDER + "BebasNeue-Regular.ttf";
     String UNIVERSES_FONT_PATH = FONT_FOLDER + "Univers-light-normal.ttf";
 
+
     //ICONS
     ImageIcon ICON = new ImageIcon(RESOURCE_FOLDER + "icon.png");
     ImageIcon CLOSING_APP = new ImageIcon(ICONS_FOLDER + "app-closing.png");
     ImageIcon RIGHT_ARROW = new ImageIcon(ICONS_FOLDER + "right-arrow.png");
 
-    ImageIcon CURSOR = new ImageIcon(CURSORS_FOLDER + "test.png");
-//    Image CURSOR = BufferedImageLoader.loadImage(RESOURCE_FOLDER + "cursor.gif");
 
     //WINDOW SIZE
     double WINDOW_WIDTH = Toolkit.getDefaultToolkit().getScreenSize().getWidth() * 2 / 3;
