@@ -72,7 +72,7 @@ public class UsernameInputBox extends EmptyBox {
 
     public void loadLobby(boolean server) {
         Tombola.username = usernameField.getText();
-        ViewManager.usernameView.setVisible(false);
+        ViewManager.startView.setVisible(false);
     }
 
 

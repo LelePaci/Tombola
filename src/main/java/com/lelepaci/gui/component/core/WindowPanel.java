@@ -1,6 +1,8 @@
 package com.lelepaci.gui.component.core;
 
 import com.lelepaci.gui.component.base.TPanel;
+import com.lelepaci.gui.utils.ViewManager;
+import com.lelepaci.gui.view.LobbyView;
 import com.lelepaci.gui.view.StartView;
 
 import java.awt.*;
@@ -13,12 +15,18 @@ public class WindowPanel extends TPanel{
 
         TopBar topBar = new TopBar(windowFrame);
         StartView startWindow = new StartView(windowFrame);
+        LobbyView lobbyView = new LobbyView(windowFrame);
 
+        this.add(lobbyView);
         this.add(startWindow);
         this.add(topBar);
 
         windowFrame.add(this);
         windowFrame.updateFrame();
+
+
+        ViewManager.startView.setVisible(false);
+        ViewManager.lobbyView.setVisible(true);
     }
 
     @Override

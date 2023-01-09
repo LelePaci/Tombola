@@ -2,7 +2,7 @@ package com.lelepaci.gui.view;
 
 import com.lelepaci.gui.component.TransparentPanel;
 import com.lelepaci.gui.component.UsernameInputBox;
-import com.lelepaci.gui.component.base.TPanel;
+import com.lelepaci.gui.component.base.TView;
 import com.lelepaci.gui.component.core.WindowFrame;
 import com.lelepaci.gui.utils.FontLoader;
 import com.lelepaci.gui.utils.GridBagConstraintBuilder;
@@ -11,12 +11,9 @@ import com.lelepaci.gui.utils.ViewManager;
 import javax.swing.*;
 import java.awt.*;
 
-public class StartView extends TPanel {
+public class StartView extends TView {
     public StartView(WindowFrame windowFrame) {
         super(windowFrame);
-        this.setOpaque(false);
-        this.setPreferredSize(new Dimension((int)WINDOW_WIDTH, (int) WINDOW_HEIGHT - 25));
-        this.setBounds(0, 25, (int) WINDOW_WIDTH, (int) WINDOW_HEIGHT - 25);
         this.setLayout(new BorderLayout());
 
         //COMPONENTS
@@ -31,7 +28,7 @@ public class StartView extends TPanel {
         GridBagConstraints gridInputBox = GridBagConstraintBuilder.build(0,1,0.0f,.0f, new Insets(0,0,0,0));
 
         TransparentPanel topPanel = new TransparentPanel();
-        topPanel.setPreferredSize(new Dimension(this.getPreferredSize().width, (int) (WINDOW_HEIGHT * 0.4)));
+        topPanel.setPreferredSize(new Dimension((int)WINDOW_WIDTH, (int) (WINDOW_HEIGHT * 0.4)));
         topPanel.setLayout(new GridBagLayout());
         topPanel.add(labelTitle);
 
@@ -40,12 +37,11 @@ public class StartView extends TPanel {
         TransparentPanel bottomPanel = new TransparentPanel();
         bottomPanel.setPreferredSize(new Dimension(this.getPreferredSize().width, (int) (WINDOW_HEIGHT - topPanel.getPreferredSize().height)));
         bottomPanel.setLayout(new GridBagLayout());
-        System.out.println(bottomPanel.getPreferredSize());
         bottomPanel.add(usernameInputBox, gridInputBox);
         this.add(bottomPanel, BorderLayout.PAGE_END);
 
         this.setVisible(true);
-        ViewManager.usernameView = this;
+        ViewManager.startView = this;
     }
 
     @Override
