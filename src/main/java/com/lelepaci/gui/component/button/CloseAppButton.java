@@ -10,9 +10,11 @@ import java.awt.event.ActionListener;
 
 
 public class CloseAppButton extends TButton implements ActionListener {
+
     public CloseAppButton(WindowFrame windowFrame) {
         super(windowFrame);
-        this.setIcon(new ImageIcon(CLOSING_APP.getImage().getScaledInstance(25, 25, Image.SCALE_SMOOTH)));
+        Image icon = new ImageIcon(ICONS_FOLDER + "app-closing.png").getImage();
+        this.setIcon(new ImageIcon(icon.getScaledInstance(25, 25, Image.SCALE_SMOOTH)));
         this.addActionListener(this);
     }
 

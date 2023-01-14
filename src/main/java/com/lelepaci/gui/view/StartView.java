@@ -1,11 +1,11 @@
 package com.lelepaci.gui.view;
 
-import com.lelepaci.gui.component.TransparentPanel;
+import com.lelepaci.gui.component.custom.TransparentPanel;
 import com.lelepaci.gui.component.UsernameInputBox;
 import com.lelepaci.gui.component.base.TView;
 import com.lelepaci.gui.component.core.WindowFrame;
 import com.lelepaci.gui.utils.FontLoader;
-import com.lelepaci.gui.utils.GridBagConstraintBuilder;
+import com.lelepaci.gui.utils.GridBagConstraintsBuilder;
 import com.lelepaci.gui.utils.ViewManager;
 
 import javax.swing.*;
@@ -25,7 +25,7 @@ public class StartView extends TView {
         UsernameInputBox usernameInputBox = new UsernameInputBox(windowFrame);
 
 //        GridBagConstraints gridLabelTitle = GridBagConstraintBuilder.build(0,0,0.0f,.0f, new Insets(-150,0,0,0), GridBagConstraints.PAGE_START);
-        GridBagConstraints gridInputBox = GridBagConstraintBuilder.build(0,1,0.0f,.0f, new Insets(0,0,0,0));
+        GridBagConstraints gridInputBox = GridBagConstraintsBuilder.build(0,1,0.0f,.0f, new Insets(0,0,0,0));
 
         TransparentPanel topPanel = new TransparentPanel();
         topPanel.setPreferredSize(new Dimension((int)WINDOW_WIDTH, (int) (WINDOW_HEIGHT * 0.4)));

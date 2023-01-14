@@ -1,43 +1,87 @@
 package com.lelepaci.gui.component;
 
-import com.lelepaci.gui.component.base.EmptyBox;
+import com.lelepaci.connection.ConnectionUtils;
+import com.lelepaci.gui.component.base.TButton;
+import com.lelepaci.gui.component.button.CopyButton;
+import com.lelepaci.gui.component.button.ReloadButton;
+import com.lelepaci.gui.component.custom.EmptyBox;
 import com.lelepaci.gui.component.core.WindowFrame;
+import com.lelepaci.gui.component.custom.RedButton;
 import com.lelepaci.gui.utils.FontLoader;
-import com.lelepaci.gui.utils.GridBagConstraintBuilder;
+import com.lelepaci.gui.utils.GridBagConstraintsBuilder;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class HostBox extends EmptyBox {
+    private int additionalHeight = 0;
+    private JTextField hostField;
+    private boolean ipStatus = false;
 
-    private Dimension currentDimension;
     public HostBox(WindowFrame windowFrame) {
         super(windowFrame);
-        currentDimension = new Dimension(950, 100);
-
         this.setLayout(new GridBagLayout());
 
-        JLabel label1 = new JLabel("Host:");
-        label1.setFont(FontLoader.loadFont(BEBAS_NEUE_FONT_PATH, 40));
+        addJLabel1();
+        addHostLabel();
+        addCopyButton();
 
-        GridBagConstraints gridLabel1 = GridBagConstraintBuilder.build(0,0,.0f,.0f,new Insets(0,5,0,0),GridBagConstraints.LINE_START);
+        this.setPreferredSize(new Dimension(getLargestChildPreferredWidth() + 100,
+                getPreferredSize().height + (additionalHeight)));
+        windowFrame.updateFrame();
+    }
 
-        JLabel hostLabel = new JLabel("192.168.1.1");
-        hostLabel.setFont(FontLoader.loadFont(BEBAS_NEUE_FONT_PATH, 40));
+    private void addJLabel1(){
+        JLabel jLabel1 = new JLabel("Condividi questo indirizzo IP ai tuoi amici");
+        jLabel1.setFont(FontLoader.loadFont(UNIVERSES_FONT_PATH, 15));
+        jLabel1.setForeground(Color.GRAY);
 
-        GridBagConstraints gridHostLabel = GridBagConstraintBuilder.build(1,0,.0f,.0f,new Insets(0,5,0,0),GridBagConstraints.LINE_START);
+        GridBagConstraints gridLabel1 = GridBagConstraintsBuilder.build(0, 0, .0f, .1f, 2,1, new Insets(10, 0, 5, 0));
 
-        this.add(label1, gridLabel1);
-        this.add(hostLabel, gridHostLabel);
+        this.add(jLabel1, gridLabel1);
+    }
 
-        currentDimension = new Dimension(currentDimension.width, currentDimension.height);
+    private void addHostLabel(){
+        hostField = new JTextField();
+        hostField.setEditable(false);
+        hostField.setBackground(new Color(0,0,0,0));
+        hostField.setBorder(BorderFactory.createEmptyBorder());
 
-        int newWidth = label1.getPreferredSize().width + hostLabel.getPreferredSize().width + 10;
-        Dimension newDimension = new Dimension(newWidth, currentDimension.height);
+        GridBagConstraints gridHostLabel = GridBagConstraintsBuilder.build(0,1,.0f,.0f, new Insets(0,0,5,0));
+        setIPText();
+        this.add(hostField, gridHostLabel);
+    }
 
-        this.setPreferredSize(currentDimension);
-        this.setMinimumSize(currentDimension);
-        System.out.println(label1.getPreferredSize());
+    private void addCopyButton(){
+        GridBagConstraints gridCopyReloadButton = GridBagConstraintsBuilder.build(1, 1, .0f, .0f, new Insets(0, 5, 5, 0));
+        if (ipStatus) {
+            CopyButton copyButton = new CopyButton(windowFrame, hostField);
+            this.add(copyButton, gridCopyReloadButton);
+        } else {
+            ReloadButton reloadButton = new ReloadButton(windowFrame);
+            reloadButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    setIPText();
+                }
+            });
+            this.add(reloadButton, gridCopyReloadButton);
+        }
+    }
 
+    private void setIPText(){
+        hostField.setText("");
+        try {
+            hostField.setText(ConnectionUtils.getCurrentPublicIP());
+            hostField.setFont(FontLoader.loadFont(BEBAS_NEUE_FONT_PATH, 50));
+            hostField.setForeground(Color.BLACK);
+            ipStatus = true;
+        } catch (IOException e) {
+            new RuntimeException("Cannot retrieve current ip address");
+        }
+        windowFrame.updateFrame();
     }
 }

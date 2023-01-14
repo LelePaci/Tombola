@@ -1,10 +1,10 @@
 package com.lelepaci.gui.component;
 
-import com.lelepaci.gui.component.base.EmptyBox;
+import com.lelepaci.gui.component.custom.EmptyBox;
 import com.lelepaci.gui.component.base.TTextField;
-import com.lelepaci.gui.component.button.RedButton;
+import com.lelepaci.gui.component.custom.RedButton;
 import com.lelepaci.gui.component.core.WindowFrame;
-import com.lelepaci.gui.utils.GridBagConstraintBuilder;
+import com.lelepaci.gui.utils.GridBagConstraintsBuilder;
 import com.lelepaci.gui.utils.ViewManager;
 import com.lelepaci.main.Tombola;
 
@@ -41,9 +41,9 @@ public class UsernameInputBox extends EmptyBox {
         boxHeight += componentsHeight;
 
         //LAYOUTS
-        GridBagConstraints gridUsernameField = GridBagConstraintBuilder.build(0, 0, .0f, .0f, 2, 1, new Insets(0, 0, internalBorder, 0));
-        GridBagConstraints gridCreateLobbyButton = GridBagConstraintBuilder.build(0, 1, .0f, .0f, new Insets(0, 0, 0, internalBorder / 2));
-        GridBagConstraints gridJoinLobbyButton = GridBagConstraintBuilder.build(1, 1, .0f, .0f, new Insets(0, internalBorder / 2, 0, 0));
+        GridBagConstraints gridUsernameField = GridBagConstraintsBuilder.build(0, 0, .0f, .0f, 2, 1, new Insets(0, 0, internalBorder, 0));
+        GridBagConstraints gridCreateLobbyButton = GridBagConstraintsBuilder.build(0, 1, .0f, .0f, new Insets(0, 0, 0, internalBorder / 2));
+        GridBagConstraints gridJoinLobbyButton = GridBagConstraintsBuilder.build(1, 1, .0f, .0f, new Insets(0, internalBorder / 2, 0, 0));
 
         createLobbyButton.addActionListener(new ActionListener() {
             @Override
@@ -92,8 +92,8 @@ public class UsernameInputBox extends EmptyBox {
         ipAddressField.setHorizontalAlignment(JTextField.CENTER);
         boxHeight += componentsHeight + internalBorder;
 
-        GridBagConstraints gridIpAddressField = GridBagConstraintBuilder.build(0, 2, .0f, .0f, 2,1, new Insets(internalBorder, 0, 0, 0));
-        GridBagConstraints gridGoNextButton = GridBagConstraintBuilder.build(0, 3, .0f, .0f, 2,1, new Insets(internalBorder, 0, 0, 0));
+        GridBagConstraints gridIpAddressField = GridBagConstraintsBuilder.build(0, 2, .0f, .0f, 2,1, new Insets(internalBorder, 0, 0, 0));
+        GridBagConstraints gridGoNextButton = GridBagConstraintsBuilder.build(0, 3, .0f, .0f, 2,1, new Insets(internalBorder, 0, 0, 0));
 
         RedButton goNextButton = new RedButton(windowFrame, "Continua", new Dimension(usernameFieldWidth, componentsHeight));
         boxHeight += componentsHeight + internalBorder;

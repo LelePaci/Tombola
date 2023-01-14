@@ -24,7 +24,6 @@ public class WindowPanel extends TPanel{
         windowFrame.add(this);
         windowFrame.updateFrame();
 
-
         ViewManager.startView.setVisible(false);
         ViewManager.lobbyView.setVisible(true);
     }

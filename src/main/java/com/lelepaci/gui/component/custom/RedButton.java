@@ -1,4 +1,4 @@
-package com.lelepaci.gui.component.button;
+package com.lelepaci.gui.component.custom;
 
 import com.lelepaci.gui.component.base.TButton;
 import com.lelepaci.gui.component.core.WindowFrame;

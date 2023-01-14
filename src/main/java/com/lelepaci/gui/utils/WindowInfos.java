@@ -19,9 +19,6 @@ public interface WindowInfos {
 
     //ICONS
     ImageIcon ICON = new ImageIcon(RESOURCE_FOLDER + "icon.png");
-    ImageIcon CLOSING_APP = new ImageIcon(ICONS_FOLDER + "app-closing.png");
-    ImageIcon RIGHT_ARROW = new ImageIcon(ICONS_FOLDER + "right-arrow.png");
-
 
     //WINDOW SIZE
     double WINDOW_WIDTH = Toolkit.getDefaultToolkit().getScreenSize().getWidth() * 2 / 3;

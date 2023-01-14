@@ -1,4 +1,4 @@
-package com.lelepaci.gui.component;
+package com.lelepaci.gui.component.custom;
 
 import javax.swing.*;
 import java.awt.*;

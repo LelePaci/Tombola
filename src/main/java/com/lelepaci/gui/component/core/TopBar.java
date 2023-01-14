@@ -1,10 +1,10 @@
 package com.lelepaci.gui.component.core;
 
-import com.lelepaci.gui.component.TransparentPanel;
+import com.lelepaci.gui.component.custom.TransparentPanel;
 import com.lelepaci.gui.component.base.TPanel;
 import com.lelepaci.gui.component.button.CloseAppButton;
 import com.lelepaci.gui.utils.FontLoader;
-import com.lelepaci.gui.utils.GridBagConstraintBuilder;
+import com.lelepaci.gui.utils.GridBagConstraintsBuilder;
 
 import javax.swing.*;
 import java.awt.*;
@@ -37,10 +37,10 @@ public class TopBar extends TPanel {
         draggable.setVisible(true);
 
         //GRIDBAG CONSTRAINTS
-        GridBagConstraints gridLabelTitle = GridBagConstraintBuilder.build(0,0,0.0f,0.0f);
-        GridBagConstraints gridDraggable = GridBagConstraintBuilder.build(1,0,1.0f,0.0f);
-        GridBagConstraints gridCloseAppButton = GridBagConstraintBuilder.build(2,0,0.0f,0.0f);
-        GridBagConstraints gridEmptySpace = GridBagConstraintBuilder.build(0,1,0.0f,1.0f, 2,1);
+        GridBagConstraints gridLabelTitle = GridBagConstraintsBuilder.build(0,0,0.0f,0.0f);
+        GridBagConstraints gridDraggable = GridBagConstraintsBuilder.build(1,0,1.0f,0.0f);
+        GridBagConstraints gridCloseAppButton = GridBagConstraintsBuilder.build(2,0,0.0f,0.0f);
+        GridBagConstraints gridEmptySpace = GridBagConstraintsBuilder.build(0,1,0.0f,1.0f, 2,1);
 
         //MOUSE EVENTS
         draggable.addMouseListener(new MouseAdapter() {

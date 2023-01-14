@@ -2,7 +2,7 @@ package com.lelepaci.gui.utils;
 
 import java.awt.*;
 
-public class GridBagConstraintBuilder {
+public class GridBagConstraintsBuilder {
 
     /**
      *
@@ -108,8 +108,8 @@ public class GridBagConstraintBuilder {
      *
      * @param gridX Position of the Cell on X axis
      * @param gridY Position of the Cell on Y axis
-     * @param weightX Value between 0.0 and 1.0. Larger numbers indicate that the component's row or column should get more space.
-     * @param weightY Value between 0.0 and 1.0. Larger numbers indicate that the component's row or column should get more space.
+     * @param weightX Value between 0.0 and 1.0. Larger numbers indicate that the component's row should get more space.
+     * @param weightY Value between 0.0 and 1.0. Larger numbers indicate that the component's column should get more space.
      * @param gridWidth Number of columns that the componennt occupies
      * @param gridHeight Number of rows that the componennt occupies
      * @param insets External padding of the cell

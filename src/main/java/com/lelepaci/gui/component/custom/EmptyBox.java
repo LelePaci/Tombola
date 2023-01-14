@@ -1,10 +1,13 @@
-package com.lelepaci.gui.component.base;
+package com.lelepaci.gui.component.custom;
 
+import com.lelepaci.gui.component.base.TPanel;
 import com.lelepaci.gui.component.core.WindowFrame;
+import com.lelepaci.gui.utils.IGui;
+import com.lelepaci.gui.utils.WindowInfos;
 
 import java.awt.*;
 
-public class EmptyBox extends TPanel {
+public class EmptyBox extends TPanel implements WindowInfos, IGui {
 
     public EmptyBox(WindowFrame windowFrame) {
         super(windowFrame);
