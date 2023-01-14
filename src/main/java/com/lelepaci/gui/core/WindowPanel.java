@@ -1,9 +1,9 @@
-package com.lelepaci.gui.component.core;
+package com.lelepaci.gui.core;
 
 import com.lelepaci.gui.component.base.TPanel;
 import com.lelepaci.gui.utils.ViewManager;
-import com.lelepaci.gui.view.LobbyView;
-import com.lelepaci.gui.view.StartView;
+import com.lelepaci.gui.container.LobbyView;
+import com.lelepaci.gui.container.StartView;
 
 import java.awt.*;
 

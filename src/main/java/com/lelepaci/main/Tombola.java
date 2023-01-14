@@ -1,7 +1,7 @@
 package com.lelepaci.main;
 
-import com.lelepaci.gui.component.core.WindowFrame;
-import com.lelepaci.gui.component.core.WindowPanel;
+import com.lelepaci.gui.core.WindowFrame;
+import com.lelepaci.gui.core.WindowPanel;
 
 public class Tombola {
     //region MUST MOVE SOMEWHERE ELSE

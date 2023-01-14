@@ -1,7 +1,7 @@
-package com.lelepaci.gui.component.button;
+package com.lelepaci.gui.control;
 
 import com.lelepaci.gui.component.base.TButton;
-import com.lelepaci.gui.component.core.WindowFrame;
+import com.lelepaci.gui.core.WindowFrame;
 
 import javax.swing.*;
 import java.awt.*;

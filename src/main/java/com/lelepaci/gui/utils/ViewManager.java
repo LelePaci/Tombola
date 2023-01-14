@@ -1,7 +1,7 @@
 package com.lelepaci.gui.utils;
 
-import com.lelepaci.gui.view.LobbyView;
-import com.lelepaci.gui.view.StartView;
+import com.lelepaci.gui.container.LobbyView;
+import com.lelepaci.gui.container.StartView;
 
 public class ViewManager {
     public static StartView startView;

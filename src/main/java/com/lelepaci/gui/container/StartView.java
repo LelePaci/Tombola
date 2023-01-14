@@ -1,9 +1,8 @@
-package com.lelepaci.gui.view;
+package com.lelepaci.gui.container;
 
 import com.lelepaci.gui.component.custom.TransparentPanel;
-import com.lelepaci.gui.component.UsernameInputBox;
 import com.lelepaci.gui.component.base.TView;
-import com.lelepaci.gui.component.core.WindowFrame;
+import com.lelepaci.gui.core.WindowFrame;
 import com.lelepaci.gui.utils.FontLoader;
 import com.lelepaci.gui.utils.GridBagConstraintsBuilder;
 import com.lelepaci.gui.utils.ViewManager;

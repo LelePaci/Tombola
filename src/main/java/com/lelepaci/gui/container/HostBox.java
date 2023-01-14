@@ -1,12 +1,10 @@
-package com.lelepaci.gui.component;
+package com.lelepaci.gui.container;
 
 import com.lelepaci.connection.ConnectionUtils;
-import com.lelepaci.gui.component.base.TButton;
-import com.lelepaci.gui.component.button.CopyButton;
-import com.lelepaci.gui.component.button.ReloadButton;
+import com.lelepaci.gui.control.CopyButton;
+import com.lelepaci.gui.control.ReloadButton;
 import com.lelepaci.gui.component.custom.EmptyBox;
-import com.lelepaci.gui.component.core.WindowFrame;
-import com.lelepaci.gui.component.custom.RedButton;
+import com.lelepaci.gui.core.WindowFrame;
 import com.lelepaci.gui.utils.FontLoader;
 import com.lelepaci.gui.utils.GridBagConstraintsBuilder;
 
@@ -17,7 +15,6 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 public class HostBox extends EmptyBox {
-    private int additionalHeight = 0;
     private JTextField hostField;
     private boolean ipStatus = false;
 
@@ -29,8 +26,7 @@ public class HostBox extends EmptyBox {
         addHostLabel();
         addCopyButton();
 
-        this.setPreferredSize(new Dimension(getLargestChildPreferredWidth() + 100,
-                getPreferredSize().height + (additionalHeight)));
+        this.setPreferredSize(new Dimension(getLargestChildPreferredWidth() + 120, getPreferredSize().height));
         windowFrame.updateFrame();
     }
 
@@ -39,7 +35,7 @@ public class HostBox extends EmptyBox {
         jLabel1.setFont(FontLoader.loadFont(UNIVERSES_FONT_PATH, 15));
         jLabel1.setForeground(Color.GRAY);
 
-        GridBagConstraints gridLabel1 = GridBagConstraintsBuilder.build(0, 0, .0f, .1f, 2,1, new Insets(10, 0, 5, 0));
+        GridBagConstraints gridLabel1 = GridBagConstraintsBuilder.build(0, 0, .0f, .1f, 2,1, new Insets(10, 0, 0, 0));
 
         this.add(jLabel1, gridLabel1);
     }
@@ -50,13 +46,13 @@ public class HostBox extends EmptyBox {
         hostField.setBackground(new Color(0,0,0,0));
         hostField.setBorder(BorderFactory.createEmptyBorder());
 
-        GridBagConstraints gridHostLabel = GridBagConstraintsBuilder.build(0,1,.0f,.0f, new Insets(0,0,5,0));
+        GridBagConstraints gridHostLabel = GridBagConstraintsBuilder.build(0,1,.0f,.0f, new Insets(0,0,0,0));
         setIPText();
         this.add(hostField, gridHostLabel);
     }
 
     private void addCopyButton(){
-        GridBagConstraints gridCopyReloadButton = GridBagConstraintsBuilder.build(1, 1, .0f, .0f, new Insets(0, 5, 5, 0));
+        GridBagConstraints gridCopyReloadButton = GridBagConstraintsBuilder.build(1, 1, .0f, .0f, new Insets(0, 5, 0, 0));
         if (ipStatus) {
             CopyButton copyButton = new CopyButton(windowFrame, hostField);
             this.add(copyButton, gridCopyReloadButton);

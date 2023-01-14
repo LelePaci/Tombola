@@ -1,8 +1,8 @@
-package com.lelepaci.gui.component.core;
+package com.lelepaci.gui.core;
 
 import com.lelepaci.gui.component.custom.TransparentPanel;
 import com.lelepaci.gui.component.base.TPanel;
-import com.lelepaci.gui.component.button.CloseAppButton;
+import com.lelepaci.gui.control.CloseAppButton;
 import com.lelepaci.gui.utils.FontLoader;
 import com.lelepaci.gui.utils.GridBagConstraintsBuilder;
 

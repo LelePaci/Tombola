@@ -1,9 +1,9 @@
-package com.lelepaci.gui.component;
+package com.lelepaci.gui.container;
 
 import com.lelepaci.gui.component.custom.EmptyBox;
 import com.lelepaci.gui.component.base.TTextField;
 import com.lelepaci.gui.component.custom.RedButton;
-import com.lelepaci.gui.component.core.WindowFrame;
+import com.lelepaci.gui.core.WindowFrame;
 import com.lelepaci.gui.utils.GridBagConstraintsBuilder;
 import com.lelepaci.gui.utils.ViewManager;
 import com.lelepaci.main.Tombola;
@@ -70,9 +70,10 @@ public class UsernameInputBox extends EmptyBox {
         this.add(joinLobbyButton, gridJoinLobbyButton);
     }
 
-    public void loadLobby(boolean server) {
+    private void loadLobby(boolean server) {
         Tombola.username = usernameField.getText();
         ViewManager.startView.setVisible(false);
+        ViewManager.lobbyView.setVisible(true);
     }
 
 
