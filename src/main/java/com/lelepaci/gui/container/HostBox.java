@@ -19,7 +19,7 @@ public class HostBox extends EmptyBox {
     private boolean ipStatus = false;
 
     public HostBox(WindowFrame windowFrame) {
-        super(windowFrame);
+        super(windowFrame, 1);
         this.setLayout(new GridBagLayout());
 
         addJLabel1();

@@ -30,7 +30,7 @@ public class TopBar extends TPanel {
 
         CloseAppButton btn = new CloseAppButton(windowFrame);
 
-        JPanel draggable = new TransparentPanel();
+        JPanel draggable = new TransparentPanel(windowFrame);
 
         int draggableWidth = this.getPreferredSize().width - (int)(btn.getPreferredSize().width) - (int)(labelTitle.getPreferredSize().width);
         draggable.setPreferredSize(new Dimension(draggableWidth, this.getPreferredSize().height));
@@ -73,7 +73,7 @@ public class TopBar extends TPanel {
         this.add(labelTitle, gridLabelTitle);
         this.add(draggable,gridDraggable);
         this.add(btn,gridCloseAppButton);
-        this.add(new TransparentPanel(), gridEmptySpace);
+        this.add(new TransparentPanel(windowFrame), gridEmptySpace);
     }
 
     @Override

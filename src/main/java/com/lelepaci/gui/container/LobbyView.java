@@ -27,7 +27,7 @@ public class LobbyView extends TView {
     }
 
     private void addTopPanel() {
-        TransparentPanel topPanel = new TransparentPanel();
+        TransparentPanel topPanel = new TransparentPanel(windowFrame);
         topPanel.setPreferredSize(new Dimension((int) WINDOW_WIDTH, (int) (WINDOW_HEIGHT * 0.15)));
         topPanel.setLayout(new GridBagLayout());
 
@@ -38,7 +38,7 @@ public class LobbyView extends TView {
     }
 
     private void addMiddlePanel() {
-        TransparentPanel middlePanel = new TransparentPanel();
+        TransparentPanel middlePanel = new TransparentPanel(windowFrame);
         middlePanel.setPreferredSize(new Dimension((int) WINDOW_WIDTH, (int) (WINDOW_HEIGHT * 0.75)));
         middlePanel.setLayout(new GridBagLayout());
 
@@ -49,7 +49,7 @@ public class LobbyView extends TView {
     }
 
     private void addBottomPanel(){
-        TransparentPanel bottomPanel = new TransparentPanel();
+        TransparentPanel bottomPanel = new TransparentPanel(windowFrame);
         bottomPanel.setPreferredSize(new Dimension((int) WINDOW_WIDTH, (int) (WINDOW_HEIGHT * 0.10)));
         bottomPanel.setLayout(new GridBagLayout());
 
@@ -57,7 +57,9 @@ public class LobbyView extends TView {
         exitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                loadStartView();
+//                loadStartView();
+                addPlayer("prova");
+
             }
         });
 
@@ -72,6 +74,6 @@ public class LobbyView extends TView {
     }
 
     public void addPlayer(String username){
-        playersBox.addPlayer(username);
+        playersBox.addPlayer(username, 1);
     }
 }

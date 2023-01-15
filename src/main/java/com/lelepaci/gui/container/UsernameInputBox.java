@@ -25,7 +25,7 @@ public class UsernameInputBox extends EmptyBox {
     int boxHeight = 3*internalBorder;
 
     public UsernameInputBox(WindowFrame windowFrame) {
-        super(windowFrame);
+        super(windowFrame, 1);
         this.setLayout(new GridBagLayout());
 
         //COMPONENTS
