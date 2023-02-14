@@ -7,10 +7,9 @@ import javax.swing.*;
 import java.awt.*;
 
 public abstract class TButton extends JButton implements WindowInfos {
-    protected WindowFrame windowFrame;
+    protected WindowFrame windowFrame = WindowFrame.getInstance();
 
-    public TButton(WindowFrame windowFrame) {
-        this.windowFrame = windowFrame;
+    public TButton() {
         this.setOpaque(false);
         this.setBackground(new Color(0,0,0,0));
         this.setContentAreaFilled(false);

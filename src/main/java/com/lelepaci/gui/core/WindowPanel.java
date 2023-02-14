@@ -8,14 +8,13 @@ import com.lelepaci.gui.container.StartView;
 import java.awt.*;
 
 public class WindowPanel extends TPanel{
-    public WindowPanel(WindowFrame windowFrame) {
-        super(windowFrame);
+    public WindowPanel() {
         this.setOpaque(false);
         this.setLayout(new BorderLayout());
 
-        TopBar topBar = new TopBar(windowFrame);
-        StartView startWindow = new StartView(windowFrame);
-        LobbyView lobbyView = new LobbyView(windowFrame);
+        TopBar topBar = new TopBar();
+        StartView startWindow = new StartView();
+        LobbyView lobbyView = new LobbyView();
 
         this.add(lobbyView);
         this.add(startWindow);

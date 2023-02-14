@@ -24,8 +24,8 @@ public class UsernameInputBox extends EmptyBox {
     int boxWidth = usernameFieldWidth + 2 * internalBorder;
     int boxHeight = 3*internalBorder;
 
-    public UsernameInputBox(WindowFrame windowFrame) {
-        super(windowFrame, 1);
+    public UsernameInputBox() {
+        super(1);
         this.setLayout(new GridBagLayout());
 
         //COMPONENTS
@@ -36,8 +36,8 @@ public class UsernameInputBox extends EmptyBox {
         boxHeight += componentsHeight;
 
         Dimension buttonsDim = new Dimension(200, componentsHeight);
-        RedButton createLobbyButton = new RedButton(windowFrame, "Crea Lobby", buttonsDim);
-        RedButton joinLobbyButton = new RedButton(windowFrame, "Partecipa", buttonsDim);
+        RedButton createLobbyButton = new RedButton( "Crea Lobby", buttonsDim);
+        RedButton joinLobbyButton = new RedButton( "Partecipa", buttonsDim);
         boxHeight += componentsHeight;
 
         //LAYOUTS
@@ -96,7 +96,7 @@ public class UsernameInputBox extends EmptyBox {
         GridBagConstraints gridIpAddressField = GridBagConstraintsBuilder.build(0, 2, .0f, .0f, 2,1, new Insets(internalBorder, 0, 0, 0));
         GridBagConstraints gridGoNextButton = GridBagConstraintsBuilder.build(0, 3, .0f, .0f, 2,1, new Insets(internalBorder, 0, 0, 0));
 
-        RedButton goNextButton = new RedButton(windowFrame, "Continua", new Dimension(usernameFieldWidth, componentsHeight));
+        RedButton goNextButton = new RedButton("Continua", new Dimension(usernameFieldWidth, componentsHeight));
         boxHeight += componentsHeight + internalBorder;
 
         this.setPreferredSize(new Dimension(boxWidth, boxHeight));

@@ -18,8 +18,8 @@ public class HostBox extends EmptyBox {
     private JTextField hostField;
     private boolean ipStatus = false;
 
-    public HostBox(WindowFrame windowFrame) {
-        super(windowFrame, 1);
+    public HostBox() {
+        super(1);
         this.setLayout(new GridBagLayout());
 
         addJLabel1();
@@ -54,10 +54,10 @@ public class HostBox extends EmptyBox {
     private void addCopyButton(){
         GridBagConstraints gridCopyReloadButton = GridBagConstraintsBuilder.build(1, 1, .0f, .0f, new Insets(0, 5, 0, 0));
         if (ipStatus) {
-            CopyButton copyButton = new CopyButton(windowFrame, hostField);
+            CopyButton copyButton = new CopyButton(hostField);
             this.add(copyButton, gridCopyReloadButton);
         } else {
-            ReloadButton reloadButton = new ReloadButton(windowFrame);
+            ReloadButton reloadButton = new ReloadButton();
             reloadButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {

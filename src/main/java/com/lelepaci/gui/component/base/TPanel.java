@@ -6,10 +6,9 @@ import com.lelepaci.gui.core.WindowFrame;
 import javax.swing.*;
 
 public class TPanel extends JPanel implements WindowInfos {
-    protected WindowFrame windowFrame;
+    protected final WindowFrame windowFrame = WindowFrame.getInstance();
 
-    public TPanel(WindowFrame windowFrame){
-        this.windowFrame = windowFrame;
+    public TPanel() {
     }
 
     @Override

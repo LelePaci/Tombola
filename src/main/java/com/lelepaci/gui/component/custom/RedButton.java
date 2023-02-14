@@ -7,8 +7,7 @@ import com.lelepaci.gui.utils.FontLoader;
 import java.awt.*;
 
 public class RedButton extends TButton {
-    public RedButton(WindowFrame windowFrame, String text, Dimension dimension) {
-        super(windowFrame);
+    public RedButton(String text, Dimension dimension) {
         this.setPreferredSize(dimension);
         this.setForeground(Color.white);
         this.setText(text);

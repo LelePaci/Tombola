@@ -11,8 +11,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class StartView extends TView {
-    public StartView(WindowFrame windowFrame) {
-        super(windowFrame);
+    public StartView() {
         this.setLayout(new BorderLayout());
 
         //COMPONENTS
@@ -21,19 +20,19 @@ public class StartView extends TView {
         labelTitle.setForeground(Color.WHITE);
         labelTitle.setVisible(true);
 
-        UsernameInputBox usernameInputBox = new UsernameInputBox(windowFrame);
+        UsernameInputBox usernameInputBox = new UsernameInputBox();
 
 //        GridBagConstraints gridLabelTitle = GridBagConstraintBuilder.build(0,0,0.0f,.0f, new Insets(-150,0,0,0), GridBagConstraints.PAGE_START);
         GridBagConstraints gridInputBox = GridBagConstraintsBuilder.build(0,1,0.0f,.0f, new Insets(0,0,0,0));
 
-        TransparentPanel topPanel = new TransparentPanel(windowFrame);
+        TransparentPanel topPanel = new TransparentPanel();
         topPanel.setPreferredSize(new Dimension((int)WINDOW_WIDTH, (int) (WINDOW_HEIGHT * 0.4)));
         topPanel.setLayout(new GridBagLayout());
         topPanel.add(labelTitle);
 
         this.add(topPanel, BorderLayout.PAGE_START);
 
-        TransparentPanel bottomPanel = new TransparentPanel(windowFrame);
+        TransparentPanel bottomPanel = new TransparentPanel();
         bottomPanel.setPreferredSize(new Dimension(this.getPreferredSize().width, (int) (WINDOW_HEIGHT - topPanel.getPreferredSize().height)));
         bottomPanel.setLayout(new GridBagLayout());
         bottomPanel.add(usernameInputBox, gridInputBox);

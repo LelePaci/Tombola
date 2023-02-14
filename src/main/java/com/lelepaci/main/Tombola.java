@@ -4,6 +4,7 @@ import com.lelepaci.gui.core.WindowFrame;
 import com.lelepaci.gui.core.WindowPanel;
 
 public class Tombola {
+
     //region MUST MOVE SOMEWHERE ELSE
     public static String username = "";
     //endregion
@@ -15,9 +16,9 @@ public class Tombola {
     private WindowFrame frame;
 
     public Tombola(){
-        frame = new WindowFrame();
+        frame = WindowFrame.getInstance();
         // Need this for handling N JComponenet. Maybe shoul be Singleton
-        WindowPanel windowPanel = new WindowPanel(frame);
+        WindowPanel windowPanel = new WindowPanel();
         frame.add(windowPanel);
     }
 }

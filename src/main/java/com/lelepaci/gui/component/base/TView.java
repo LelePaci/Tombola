@@ -5,8 +5,8 @@ import com.lelepaci.gui.core.WindowFrame;
 import java.awt.*;
 
 public class TView extends TPanel{
-    public TView(WindowFrame windowFrame) {
-        super(windowFrame);
+
+    public TView() {
         this.setOpaque(false);
         this.setPreferredSize(new Dimension((int)WINDOW_WIDTH, (int) WINDOW_HEIGHT - 25));
         this.setBounds(0, 25, (int) WINDOW_WIDTH, (int) WINDOW_HEIGHT - 25);

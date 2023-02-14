@@ -13,8 +13,7 @@ import java.awt.event.ActionListener;
 public class CopyButton extends TButton implements ActionListener {
     private String toCopy = null;
     private JTextField textField;
-    public CopyButton(WindowFrame windowFrame, JTextField textField) {
-        super(windowFrame);
+    public CopyButton(JTextField textField) {
         Image icon = new ImageIcon(ICONS_FOLDER + "copy.png").getImage();
         this.setIcon(new ImageIcon(icon.getScaledInstance(25, 25, Image.SCALE_SMOOTH)));
         this.textField = textField;

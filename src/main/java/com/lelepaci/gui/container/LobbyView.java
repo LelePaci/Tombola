@@ -14,8 +14,7 @@ public class LobbyView extends TView {
 
     private PlayersBox playersBox;
 
-    public LobbyView(WindowFrame windowFrame) {
-        super(windowFrame);
+    public LobbyView() {
         this.setLayout(new BorderLayout());
 
         addTopPanel();
@@ -27,18 +26,18 @@ public class LobbyView extends TView {
     }
 
     private void addTopPanel() {
-        TransparentPanel topPanel = new TransparentPanel(windowFrame);
+        TransparentPanel topPanel = new TransparentPanel();
         topPanel.setPreferredSize(new Dimension((int) WINDOW_WIDTH, (int) (WINDOW_HEIGHT * 0.15)));
         topPanel.setLayout(new GridBagLayout());
 
-        HostBox host = new HostBox(windowFrame);
+        HostBox host = new HostBox();
         topPanel.add(host);
 
         this.add(topPanel, BorderLayout.PAGE_START);
     }
 
     private void addMiddlePanel() {
-        TransparentPanel middlePanel = new TransparentPanel(windowFrame);
+        TransparentPanel middlePanel = new TransparentPanel();
         middlePanel.setPreferredSize(new Dimension((int) WINDOW_WIDTH, (int) (WINDOW_HEIGHT * 0.75)));
         middlePanel.setLayout(new GridBagLayout());
 
@@ -49,11 +48,11 @@ public class LobbyView extends TView {
     }
 
     private void addBottomPanel(){
-        TransparentPanel bottomPanel = new TransparentPanel(windowFrame);
+        TransparentPanel bottomPanel = new TransparentPanel();
         bottomPanel.setPreferredSize(new Dimension((int) WINDOW_WIDTH, (int) (WINDOW_HEIGHT * 0.10)));
         bottomPanel.setLayout(new GridBagLayout());
 
-        RedButton exitButton = new RedButton(windowFrame ,"Esci", new Dimension(200, 50));
+        RedButton exitButton = new RedButton("Esci", new Dimension(200, 50));
         exitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -73,7 +72,11 @@ public class LobbyView extends TView {
         ViewManager.startView.setVisible(true);
     }
 
+    /**
+     *  Action performed on mouse click
+     * @param username of the player
+     */
     public void addPlayer(String username){
-        playersBox.addPlayer(username, 1);
+        playersBox.addPlayer(username, 0);
     }
 }

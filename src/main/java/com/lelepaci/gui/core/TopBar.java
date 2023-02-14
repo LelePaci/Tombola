@@ -16,8 +16,8 @@ import java.net.URISyntaxException;
 public class TopBar extends TPanel {
 
     private int x, y;
-    public TopBar(WindowFrame windowFrame) {
-        super(windowFrame);
+
+    public TopBar() {
         this.setOpaque(false);
         this.setPreferredSize(new Dimension((int) WINDOW_WIDTH, 25));
         this.setLayout(new GridBagLayout());
@@ -26,21 +26,21 @@ public class TopBar extends TPanel {
         JLabel labelTitle = new JLabel("Tombola");
         labelTitle.setFont(FontLoader.loadFont(BEBAS_NEUE_FONT_PATH, 15));
         labelTitle.setForeground(Color.white);
-        labelTitle.setBorder(BorderFactory.createEmptyBorder(2,5,0,0));
+        labelTitle.setBorder(BorderFactory.createEmptyBorder(2, 5, 0, 0));
 
-        CloseAppButton btn = new CloseAppButton(windowFrame);
+        CloseAppButton btn = new CloseAppButton();
 
-        JPanel draggable = new TransparentPanel(windowFrame);
+        JPanel draggable = new TransparentPanel();
 
-        int draggableWidth = this.getPreferredSize().width - (int)(btn.getPreferredSize().width) - (int)(labelTitle.getPreferredSize().width);
+        int draggableWidth = this.getPreferredSize().width - (int) (btn.getPreferredSize().width) - (int) (labelTitle.getPreferredSize().width);
         draggable.setPreferredSize(new Dimension(draggableWidth, this.getPreferredSize().height));
         draggable.setVisible(true);
 
         //GRIDBAG CONSTRAINTS
-        GridBagConstraints gridLabelTitle = GridBagConstraintsBuilder.build(0,0,0.0f,0.0f);
-        GridBagConstraints gridDraggable = GridBagConstraintsBuilder.build(1,0,1.0f,0.0f);
-        GridBagConstraints gridCloseAppButton = GridBagConstraintsBuilder.build(2,0,0.0f,0.0f);
-        GridBagConstraints gridEmptySpace = GridBagConstraintsBuilder.build(0,1,0.0f,1.0f, 2,1);
+        GridBagConstraints gridLabelTitle = GridBagConstraintsBuilder.build(0, 0, 0.0f, 0.0f);
+        GridBagConstraints gridDraggable = GridBagConstraintsBuilder.build(1, 0, 1.0f, 0.0f);
+        GridBagConstraints gridCloseAppButton = GridBagConstraintsBuilder.build(2, 0, 0.0f, 0.0f);
+        GridBagConstraints gridEmptySpace = GridBagConstraintsBuilder.build(0, 1, 0.0f, 1.0f, 2, 1);
 
         //MOUSE EVENTS
         draggable.addMouseListener(new MouseAdapter() {
@@ -71,9 +71,9 @@ public class TopBar extends TPanel {
         });
 
         this.add(labelTitle, gridLabelTitle);
-        this.add(draggable,gridDraggable);
-        this.add(btn,gridCloseAppButton);
-        this.add(new TransparentPanel(windowFrame), gridEmptySpace);
+        this.add(draggable, gridDraggable);
+        this.add(btn, gridCloseAppButton);
+        this.add(new TransparentPanel(), gridEmptySpace);
     }
 
     @Override

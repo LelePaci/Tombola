@@ -11,22 +11,11 @@ import java.awt.event.FocusListener;
 
 public class TTextField extends JTextField implements WindowInfos {
 
-    private WindowFrame windowFrame;
+    private WindowFrame windowFrame = WindowFrame.getInstance();
     private String placeholder;
 
     public TTextField(String placeholder, int size) {
         super(placeholder);
-        this.placeholder = placeholder;
-        setFont(FontLoader.loadFont(UNIVERSES_FONT_PATH, size));
-        setBackground(new Color(0,0,0,0));
-        setForeground(Color.GRAY);
-        setBorder(BorderFactory.createEmptyBorder(5,15,5,15));
-        handleFocus();
-    }
-
-    public TTextField(WindowFrame windowFrame, String placeholder, int size) {
-        super(placeholder);
-        this.windowFrame = windowFrame;
         this.placeholder = placeholder;
         setFont(FontLoader.loadFont(UNIVERSES_FONT_PATH, size));
         setBackground(new Color(0,0,0,0));
