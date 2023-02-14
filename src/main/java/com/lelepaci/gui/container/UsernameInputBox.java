@@ -76,7 +76,6 @@ public class UsernameInputBox extends EmptyBox {
         ViewManager.lobbyView.setVisible(true);
     }
 
-
     public boolean checkUsername() {
         if (!usernameField.getText().equals(usernameField.getPlaceholder())) {
             if (usernameField.getText().length() > 4) {

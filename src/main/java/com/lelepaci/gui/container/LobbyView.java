@@ -77,6 +77,6 @@ public class LobbyView extends TView {
      * @param username of the player
      */
     public void addPlayer(String username){
-        playersBox.addPlayer(username, 0);
+        playersBox.addPlayer(username);
     }
 }

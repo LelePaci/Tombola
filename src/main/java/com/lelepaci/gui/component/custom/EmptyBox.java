@@ -12,11 +12,16 @@ public class EmptyBox extends TPanel implements WindowInfos, IGui {
     protected int arcRadius;
     protected Color color;
 
-    public EmptyBox(WindowFrame windowFrame, int style) {
-        super(windowFrame);
+    public EmptyBox(int style) {
         this.setOpaque(false);
         this.style = style;
         this.arcRadius = 50;
+    }
+
+    public EmptyBox(int style, int arcRadius) {
+        this.setOpaque(false);
+        this.style = style;
+        this.arcRadius = arcRadius;
     }
 
     @Override
